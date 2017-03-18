@@ -38,6 +38,7 @@ for (let i = 0; i < 30; i++) {
                     console.log(true);
                     return true;
                 })) {
+                console.log(rowInfo);
                 basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
                     console.log("ID:" + ret);
                 })
