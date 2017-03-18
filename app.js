@@ -33,6 +33,8 @@ for (let i = 0; i < 30; i++) {
             rowInfo.description = json.blogs[j].description;
             rowInfo.url = json.blogs[j].url;
             rowInfo.updated = json.blogs[j].updated;
+            rowInfo.num = 10*i+j;
+
             Id.name = json.blogs[j].name;
             basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
                 console.log("ID:" + ret);
