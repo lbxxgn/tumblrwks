@@ -34,15 +34,14 @@ for (let i = 0; i < 30; i++) {
             rowInfo.url = json.blogs[j].url;
             rowInfo.updated = json.blogs[j].updated;
             Id.name = json.blogs[j].name;
-            if (basemodel.findOneById('Tumblr_Info', Id, function (ret) {
-                    console.log(true);
-                    return true;
-                })) {
+            basemodel.findOneById('Tumblr_Info', Id, function (ret) {
+                console.log(true);
                 console.log(rowInfo);
                 basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
                     console.log("ID:" + ret);
                 })
-            }
+                return true;
+            })
         }
     }, function (error) {
         console(error);
