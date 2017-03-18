@@ -3,7 +3,8 @@
  */
 let BaseModel = require('../lib/DB/BaseModel'),
     basemodel = new BaseModel('../conf/config.json'),
-    rowInfo={};
+    rowInfo={},
+    Id={};
 
 rowInfo.name="genan";
 rowInfo.title="test";
@@ -15,3 +16,8 @@ basemodel.insert('Tumblr_Info',rowInfo,function (ret) {
     console.log("ID:"+ret);
 });
 console.log(rowInfo);
+Id.name = "cdmselody";
+
+basemodel.findOneById('Tumblr_Info', Id, function (ret) {
+    console.log(""=="");
+})
