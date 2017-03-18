@@ -34,14 +34,16 @@ for (let i = 0; i < 30; i++) {
             rowInfo.url = json.blogs[j].url;
             rowInfo.updated = json.blogs[j].updated;
             Id.name = json.blogs[j].name;
-            basemodel.findOneById('Tumblr_Info', Id, function (ret) {
+            new Promise(basemodel.findOneById('Tumblr_Info', Id, function (ret) {
                 console.log(true);
+                return true;
+            })).then().catch(function () {
                 console.log(rowInfo);
                 basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
                     console.log("ID:" + ret);
                 })
-                return true;
             })
+
         }
     }, function (error) {
         console(error);
