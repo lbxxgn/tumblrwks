@@ -27,6 +27,9 @@ for (let i = 0; i < 30; i++) {
     tumblr.get('/user/following', {limit: 10, offset: 10 * i}).then(function (json) {
         console.log(json);
         for (let j = 0; j < 10; j++) {
+            setTimeout(function() {
+                callback(null);
+            }, 100);
             if (json.blogs[j] == null)continue;
             rowInfo.name = json.blogs[j].name;
             rowInfo.title = json.blogs[j].title;
