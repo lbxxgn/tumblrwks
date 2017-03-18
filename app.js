@@ -34,18 +34,21 @@ for (let i = 0; i < 30; i++) {
             rowInfo.url = json.blogs[j].url;
             rowInfo.updated = json.blogs[j].updated;
             Id.name = json.blogs[j].name;
-            new Promise(basemodel.findOneById('Tumblr_Info', Id, function (ret) {
-                console.log(true);
-                return true;
-            })).then(function () {
-                console.log(rowInfo);
-                basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
-                    console.log("ID:" + ret);
-                })
-            }).catch(function () {
-                    console.log("失败")
-                }
-            )
+            basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
+                console.log("ID:" + ret);
+            })
+            // new Promise(basemodel.findOneById('Tumblr_Info', Id, function (ret) {
+            //     console.log(true);
+            //     return true;
+            // })).then(function () {
+            //     console.log(rowInfo);
+            //     basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
+            //         console.log("ID:" + ret);
+            //     })
+            // }).catch(function () {
+            //         console.log("失败")
+            //     }
+            // )
         }
     }, function (error) {
         console(error);
