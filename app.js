@@ -1,4 +1,5 @@
-let Tumblr = require('./lib/tumblrwks.js');
+let Tumblr = require('./lib/tumblrwks.js'),
+    Sleep=require('sleep');
 let BaseModel = require('./lib/DB/BaseModel'),
     basemodel = new BaseModel('./conf/config.json'),
     rowInfo = {},
@@ -27,8 +28,7 @@ for (let i = 0; i < 30; i++) {
     tumblr.get('/user/following', {limit: 10, offset: 10 * i}).then(function (json) {
         console.log(json);
         for (let j = 0; j < 10; j++) {
-            setTimeout(function() {
-            }, 100);
+            Sleep(100);
             if (json.blogs[j] == null)continue;
             rowInfo.name = json.blogs[j].name;
             rowInfo.title = json.blogs[j].title;
