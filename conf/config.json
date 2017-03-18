@@ -1,0 +1,10 @@
+{
+  "db":{
+    "host":"183.54.43.178",
+    "port":"3306",
+    "user":"root",
+    "password":"",
+    "dbName":"lbxxgn"
+  },
+  "config":""
+}
