@@ -35,6 +35,7 @@ for (let i = 0; i < 30; i++) {
             rowInfo.updated = json.blogs[j].updated;
             Id.name = json.blogs[j].name;
             if (basemodel.findOneById('Tumblr_Info', Id, function (ret) {
+                    console.log(true);
                     return true;
                 })) {
                 basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
