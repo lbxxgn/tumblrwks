@@ -41,10 +41,11 @@ for (let i = 0; i < 30; i++) {
                 console.log(rowInfo);
                 basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
                     console.log("ID:" + ret);
-                }).catch(function () {console.log("失败")}
-                )
-            })
-
+                })
+            }).catch(function () {
+                    console.log("失败")
+                }
+            )
         }
     }, function (error) {
         console(error);
