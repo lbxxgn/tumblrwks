@@ -37,11 +37,12 @@ for (let i = 0; i < 30; i++) {
             new Promise(basemodel.findOneById('Tumblr_Info', Id, function (ret) {
                 console.log(true);
                 return true;
-            })).then().catch(function () {
+            })).then(function () {
                 console.log(rowInfo);
                 basemodel.insert('Tumblr_Info', rowInfo, function (ret) {
                     console.log("ID:" + ret);
-                })
+                }).catch(function () {console.log("失败")}
+                )
             })
 
         }
