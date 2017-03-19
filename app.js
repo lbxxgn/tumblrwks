@@ -28,7 +28,7 @@ for (let i = 0; i < 30; i++) {
     tumblr.get('/user/following', {limit: 10, offset: 10 * i}).then(function (json) {
         console.log(json);
         for (let j = 0; j < 10; j++) {
-            Sleep(100);
+            sleep(200); //当前方法暂停5秒
             if (json.blogs[j] == null)continue;
             rowInfo.name = json.blogs[j].name;
             rowInfo.title = json.blogs[j].title;
@@ -57,6 +57,10 @@ for (let i = 0; i < 30; i++) {
     }, function (error) {
         console(error);
     })
+}
+
+function sleep(d){
+    for(var t = Date.now();Date.now() - t <= d;);
 }
 
 
