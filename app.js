@@ -1,5 +1,4 @@
-let Tumblr = require('./lib/tumblrwks.js'),
-    Sleep=require('sleep');
+let Tumblr = require('./lib/tumblrwks.js');
 let BaseModel = require('./lib/DB/BaseModel'),
     basemodel = new BaseModel('./conf/config.json'),
     rowInfo = {},
